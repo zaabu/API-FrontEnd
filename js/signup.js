@@ -29,5 +29,23 @@ function signup (e) {
         })
     })
 
+    .then((result) => {
+        status_code = result.status;
+        return result.json();
+    })
+    .then((data) => {
+        if (status_code >= 400) {
+            document.getElementById('error').innerHTML = data['message'];
+
+        }
+        else {
+            
+            window.location = './index.html'
+            alert('Your account has been created succesfully,please login on the next page');
+            
+
+        }
+    });
+
     
 }
