@@ -14,7 +14,20 @@ function signup (e) {
     let password = document.getElementById('password').value;
     let confirm_password =  document.getElementById('confirm_password').value;
 
-
+    fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify ({
+            firstname:firstname,
+            secondname:secondname,
+            email:email,
+            password:password,
+            phone:phone,
+            confirm_password:confirm_password
+        })
+    })
 
     
 }
