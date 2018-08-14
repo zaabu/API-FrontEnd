@@ -18,4 +18,17 @@ function login(e) {
             password:password
         })
     })
+    .then((data) => {
+        if (status_code >= 400) {
+            document.getElementById('error').innerHTML = data['message'];
+        }
+        else {
+            // store current token 
+            window.localStorage.setItem('token', data.token)
+            
+
+            window.location = './viewAllEntries.html'
+            alert('You have logged in succesfully');
+        }
+    })
 }
