@@ -12,7 +12,9 @@
 	font-smoothing: anitialised;
 	text-rendering: optimizeLegibility;
 
-
+.paragraph {
+	color: blue;
+}
 
 }
 
