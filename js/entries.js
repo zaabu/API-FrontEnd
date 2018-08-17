@@ -1,4 +1,4 @@
-function retrieveRides() {
+function retrieveEntries() {
 	if(window.localStorage.getItem('token') === "") {
 		redirect: window.location.replace('../index.html')
 	}
