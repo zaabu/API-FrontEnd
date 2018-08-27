@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Make width of page follow the screen-width of the device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8"> 
+	
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--Link for custom styles-->
+	<title>My Diary | Create Entry</title>
+
+	<!--JS files -->
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	 
+				<header>
+				<nav>
+			
+				  <ul>
+					<li><h1 class="right"><a href = "viewAllEntries.html">My Diary - Home <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h1></li>
+					<li><h3 class ="left"><a href ="viewAllEntries.html">All Entries</a></h3></li>
+			
+					<li><h3 class ="left"><a href = "new_entry.html">Create Entry</a></h3></li>
+			
+					<li><h3 class ="left"><a href = "profile.html">User Profile</a></h3></li>
+					<li><h3 class ="left"><a href = "" onclick="logout()">Log Out</a></h3></li>
+					
+				  </ul> 
+				</nav>
+				
+			
+			  </header>
+			
+			  <form action="" class ="add-content" id="new_entry">
+			  
+				<h2>My Diary | Add a new entry <i class="fa fa-book" aria-hidden="true"></i></h2>
+				
+			
+			  <div class="form-group">
+				  <label></label>
+					
+					<textarea id = "title" class ="input-control" placeholder="Entry title"></textarea>
+			  </div>
+			
+			  <div class="form-group">
+				  <label></label>
+				  <textarea id = "body" class ="input-control" placeholder="Entry body"></textarea>
+			  </div>
+			
+			
+			  
+			
+			  <div class ="form-group">
+				<label>&nbsp</label>
+				<button type = "submit" class ="button button-block" />Add Note <i class="fa fa-plus" aria-hidden="true"></i></button>
+			  </div>
+			  </form>
+			
+			
+			  <footer>
+				<h5 class="footer">My Dairy - All Rights Reserved - 2018</h5>
+			  </footer>
+
+
+		<script src="js/new_entry.js"></script>
+    
+</body>
+</html>
