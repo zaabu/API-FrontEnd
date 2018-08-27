@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 function redirectUser(){
 	confirm("You are not logged in. Please not that you will be redirected to login page when you close the dialog.")

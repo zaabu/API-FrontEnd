@@ -1,4 +1,5 @@
-// sign up
+/*jshint esversion: 6 */
+
 document.getElementById('signup-form').addEventListener('submit',signup);
 function signup(e){
     e.preventDefault();
@@ -35,7 +36,8 @@ function signup(e){
     })
     .then((data) => {
         if (status_code >= 400){
-            document.getElementById('error').innerHTML = data['message'];
+            //document.getElementById('error').innerHTML = data['message'];
+            document.getElementById('error').innerHTML = data.message;
         }
         else{
             window.location = 'index.html';

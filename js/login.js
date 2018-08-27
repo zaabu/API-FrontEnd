@@ -1,4 +1,5 @@
-// Login
+/*jshint esversion: 6 */
+
 document.getElementById('login-form').addEventListener('submit', login);
 
 function login(e){

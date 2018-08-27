@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 document.getElementById('new_entry').addEventListener('submit', newEntry);
 function newEntry(e){
     e.preventDefault();
@@ -10,7 +12,7 @@ function newEntry(e){
     if(window.localStorage.getItem('token') ===""){
         result = confirm("You need to log in first.\nPress Ok to go to login");
         if(result){
-            redirect : window.location.replace('index.html')
+            redirect : window.location.replace('index.html');
         }
 	}
 	else{
@@ -28,23 +30,25 @@ function newEntry(e){
 
         })
         .then((result) => {
-            console.log(result)
-            statusCode = result.status
-            return result.json()
+            console.log(result);
+            statusCode = result.status;
+            return result.json();
         })
         .then((data) => {
             
             if(statusCode == 401){
-                result = confirm('Your authorization ' + data['msg'] + '\nClick Ok to go to login')
+                //result = confirm('Your authorization ' + data['msg'] + '\nClick Ok to go to login');
+                result = confirm('Your authorization ' + data.msg + '\nClick Ok to go to login');
                 if(result){
-                    redirect: window.location.replace('../index.html')
+                    redirect: window.location.replace('../index.html');
                 }
             }
             else {
-                result = alert(data['message'])
-                redirect: window.location.replace('./viewAllEntries.html')
+                //result = alert(data['message']);
+                result = alert(data.message);
+                redirect: window.location.replace('./viewAllEntries.html');
             }
-        })
+        });
     }
 
 }

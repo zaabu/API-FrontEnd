@@ -1,7 +1,8 @@
+/*jshint esversion: 6 */
 
 function myProfile(){
 	if(window.localStorage.getItem('token') ===""){
-		redirect : window.location.replace('index.html')
+		redirect : window.location.replace('index.html');
 	}
 	else{
 		var statusCode;
@@ -16,35 +17,50 @@ function myProfile(){
 		})
 		.then(result => {
 			if(result.status == 401){
-				res = confirm("Your session has expired.\nClick OK to go to login.")
+				res = confirm("Your session has expired.\nClick OK to go to login.");
 				if(res){
-					redirect : window.location.replace('index.html')
+					redirect : window.location.replace('index.html');
 				}
 			}
 			else if(result.status == 200){
-				return result.json()
+				return result.json();
 			}
 		})
 		.then(data =>{
 			let output = ``;
 			output += `
+			<table>
+				<tr>
+				<h6>User Details</h6>
+				</br>
+				</tr>
 			
-			<p>User Details</p>
-			</br>
-			<p>Name: ${data.firstname.toUpperCase()} ${data.secondname.toUpperCase()}</p>
-			</br>
-			<p>Email: ${data.email}</p>
-			</br>
-			<p>Contact: +256 ${data["phone number"]}</p>
-			<br>
-			<p>Total Entries Created: </p>
-			</br>`;
+				<tr>
+				<h6>Name: ${data.firstname.toUpperCase()} ${data.secondname.toUpperCase()}</h6>
+				</br>
+				</tr>
+				<tr>
+				<h6>Email: ${data.email}</h6>
+				</br>
+				</tr>
+				<tr>
+				<h6>Contact: +256 ${data["phone number"]}</h6>
+				<br>
+				</tr>
+
+				<tr>
+				<h6>Total Entries Created: </h6>
+				</br>
+				</tr>
 			
-			document.getElementById('special').innerHTML = output
+			</table>
+				`;
+			
+			document.getElementById('special').innerHTML = output;
 		})
-		.catch(error => alert(error))
+		.catch(error => alert(error));
 
 	}
 }
 
-console.log(myProfile())
+console.log(myProfile());
