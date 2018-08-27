@@ -260,7 +260,17 @@ footer {
 	text-align: center;
 }
 
+header {
+	position: fixed;
+  	top: 0;
+	/*background-color: #006e99;*/
+	background-color:#1aacb1;
+  	width:100%;
+  	height: 50px;
+  	margin-bottom: 50px;
 
+
+}
 
 
 
