@@ -18,34 +18,28 @@ function login(e){
         })
     })
     .then((result) => {
-        console.log(result)
+        console.log(result);
         status_code = result.status;
         return result.json();
     })
     .then((data) =>{
-        console.log(data)
+        console.log(data);
         if(status_code >= 400){
-            document.getElementById('error').innerHTML = data['message'];
+            //document.getElementById('error').innerHTML = data['message'];
+            document.getElementById('error').innerHTML = data.message;
         }
         else{
             //redirect : window.location.replace('viewAllEntries.html')
             // stores tokens to browser session
             window.localStorage.setItem('token', data.token)
-            //redirect : window.location.replace('viewAllEntries.html')
-			//window.localStorage.setItem('firstname', data.firstname.toUpperCase())
-            //window.localStorage.setItem('user_type', data.user_type)
+            
             alert("You have logged in succesfully");
-            redirect : window.location.replace('viewAllEntries.html')
+            redirect : window.location.replace('viewAllEntries.html');
            
-            //alert("You have logged in succesfully");
-            //redirect: window.location.replace("viewAllEntries.html")
-            //window.location = 'viewAllEntries.html'
-            //window.location = './viewAllEntries.html'
-            //redirect : window.location.replace('viewAllEntries.html')
+            
            
         }
-    })
+    });
 }
 
-//console.log(login())
 
