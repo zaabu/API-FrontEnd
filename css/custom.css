@@ -113,6 +113,9 @@ img {
     padding-left: 20px;
     display:block;
 }
+#entryOne {
+	margin-top: 55px;
+}
 
 .entry_body {
     display: block;
