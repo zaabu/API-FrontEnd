@@ -459,7 +459,23 @@ button {
 	width:100%;
 }
 
+@media (max-width: 768px) {
+	.form-group {
+		flex-direction: column;
+	}
+	.form-group .input-control {
+		margin-top: 2px;
+	}
+	.form-group label.right-inline {
+		text-align: left;
+		padding-right: 0;
+		padding-left: 0;
+	}
 
+	nav li {
+	flex-direction: column;
+
+}
 
 
 
