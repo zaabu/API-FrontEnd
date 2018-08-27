@@ -402,6 +402,68 @@ h2 {
 }
 
 
+.form-group {
+	display: flex;
+	flex-direction: row;
+
+}
+
+
+
+
+.form-group .input-control {
+	border: medium none !important;
+	flex: 1 1 auto; /* fill entire screen space */
+	display:block;
+	margin-bottom:  20px; /* space below every form */
+	margin-right: 8px; /* space right of eleemnts */
+	padding:4px;
+	padding-top: 0px;
+	margin-top: -4px;
+	width: 100%;
+	border: 1px solid #004966;
+	background: #FFF;
+	height: 37px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
