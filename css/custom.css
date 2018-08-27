@@ -161,6 +161,80 @@ img {
 }
 
 
+.update3 {
+	border:0;
+	outline:none;
+	border-radius: 5px;
+	padding:14px 14px;
+	font-size:16px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	background:#1ab188;
+	color:white;
+	transition:all.5s ease;
+	-webkit-appearance:none;
+	float:left;
+	margin-top: 10px;
+
+	
+	
+}
+
+#editEntry{
+	margin-left: 20px;
+}
+
+.create {
+	background-color:#006e99;
+}
+.edit {
+	background-color:#006e99;
+}
+
+
+.footer{
+	padding-top: 7px;
+	padding-bottom: 20px;
+}
+#special {
+	color: black;
+	margin-left:100px;
+}
+
+
+
+
+
+
+.left {
+	margin-right: 20px;
+}
+
+
+
+.signup {
+	margin-left: 500px;
+}
+li {
+	padding-top: 12px;
+
+}
+
+/*.left:hover {
+	background-color: #1ab188;
+	padding:7px;
+}
+*/
+li a:hover {
+	/*background-color: #1ab188;*/
+	background-color:#006e99;
+	padding:3px;
+}
+
+
+
+
+
 
 
 
