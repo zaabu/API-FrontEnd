@@ -442,6 +442,23 @@ a {
 	text-decoration: none;
 }
 
+.close {
+    color: #fff;
+	background:#990000;
+    float: right;
+    clear: both;
+    font-size: 19px;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.close:hover,.close:focus {
+    color: rgb(0, 255, 64);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 button {
 	border:0;
 	outline:none;

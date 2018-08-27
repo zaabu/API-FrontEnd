@@ -200,8 +200,21 @@ function view_entry(entry_id){
 		console.log(data)
 		let detail_output =``;
 		detail_output += `<form action ="" class="add-content" id="detail_modal" >
-  
-						<h2>${data.title}  <i class="fa fa-book" aria-hidden="true"></i></h2>
+
+						<table>
+							<tr>
+								
+								<span class="close">&times;</span>
+								
+								
+								<h2>${data.title}  <i class="fa fa-book" aria-hidden="true"></i></h2> 
+								
+
+								
+							</tr>
+						
+						</table>
+						
 		
 	
 
@@ -228,18 +241,21 @@ function view_entry(entry_id){
 
 	
 
-						<!-- <div class ="form-group">
-							<label>&nbsp</label>
-							<tr>
-								<td><a><input type ="submit" class ="update3">Edit</a></td>
-							</tr>
-						</div> -->
+						
 					</form>`
 					document.getElementById('details').innerHTML = detail_output;
 
 					var modal = document.getElementById('detail_modal')
 	
+					// sow modal box
 					modal.style.display = "block";
+
+					var span = document.getElementsByClassName("close")[0];
+				
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() {
+						modal.style.display = "none";
+					}
 	
 					window.onclick = function(event) {
 						if (event.target == modal) {
@@ -247,7 +263,7 @@ function view_entry(entry_id){
 						}
 					}
 			
-		//window.location.reload()
+		
 	})
 	.catch(error => alert(error))
 	
