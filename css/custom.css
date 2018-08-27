@@ -232,6 +232,63 @@ li a:hover {
 }
 
 
+.special {
+	margin-top: 10px;
+}
+
+
+
+
+
+footer {
+	width: 100%;
+    text-align: center;
+    bottom: 0px !important;
+    position: fixed;
+    height: 30px;
+	/*background-color:#006e99;*/
+	background-color:#35bfc4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
