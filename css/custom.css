@@ -343,6 +343,56 @@ h2 {
 }
 
 
+#login-form {
+	/*background-color: #006e99;*/
+	background-color:#1aacb1;
+	padding: 40px;
+	max-width:600px;
+	margin:10px auto;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px black;
+	margin-top: 30px;
+	margin-bottom: -100px
+
+
+}/*shift content left and down by 20px */
+
+
+#signup-form {
+	/*background-color: #006e99;*/
+	background-color:#1aacb1;
+	padding: 40px;
+	max-width:600px;
+	margin:10px auto;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px black;
+	margin-top: 30px;
+	margin-bottom: -100px
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
