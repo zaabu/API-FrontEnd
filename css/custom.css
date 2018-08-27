@@ -373,6 +373,18 @@ h2 {
 }
 
 
+.add-content {
+
+	/*background-color: #006e99;*/
+	background-color:#1aacb1;
+	padding: 40px;
+	max-width:600px;
+	margin:10px auto;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px black;
+	margin-top: 100px;
+
+}
 
 
 
