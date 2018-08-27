@@ -21,3 +21,12 @@ p {
     
     text-align: center;
 }
+
+img {
+	float:left;
+	width: 340px;
+	height: 350px;
+	margin-top: 40px;
+	margin-left:180px;
+	border-radius: 5px;
+}
