@@ -387,6 +387,21 @@ h2 {
 }
 
 
+#noteBody {
+	height: 100px;
+}
+
+@media (max-width: 768px) {
+	.login-form {
+		padding: 20px 8px;
+	}
+	.signup-form {
+		padding: 20px 8px;
+	}
+
+}
+
+
 
 
 
