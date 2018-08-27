@@ -427,6 +427,64 @@ h2 {
 
 }
 
+.login {
+	border-radius: 3px;
+	font-weight: bold;
+	background:#1ab188;
+	
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+button {
+	border:0;
+	outline:none;
+	border-radius: 0;
+	padding:15px 0;
+	font-size:2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	background-color:#1ab16b;
+	color:white;
+	transition:all.5s ease;
+	-webkit-appearance:none;
+}
+
+.button-block {
+	display: block;
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
