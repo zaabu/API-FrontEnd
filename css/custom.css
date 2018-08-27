@@ -155,7 +155,10 @@ img {
     background-color: rgba(0, 0, 0, 0.652);  */
 }
 
-
+.entries:hover {
+    background-color:#1aacb1;
+    cursor: pointer;
+}
 
 
 
