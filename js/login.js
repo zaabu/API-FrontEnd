@@ -31,7 +31,7 @@ function login(e){
         else{
             //redirect : window.location.replace('viewAllEntries.html')
             // stores tokens to browser session
-            window.localStorage.setItem('token', data.token)
+            window.localStorage.setItem('token', data.token);
             
             alert("You have logged in succesfully");
             redirect : window.location.replace('viewAllEntries.html');
