@@ -16,7 +16,7 @@ function signup(e){
     var status_code;
 
     // try signup
-    fetch('http://localhost:5000/api/v1/auth/signup', {
+    fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

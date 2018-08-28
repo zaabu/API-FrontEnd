@@ -7,7 +7,7 @@ function myProfile(){
 	else{
 		var statusCode;
 	
-		fetch('http://localhost:5000/api/v1/auth/profile',{		
+		fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/profile',{		
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',

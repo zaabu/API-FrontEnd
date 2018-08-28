@@ -1,19 +1,19 @@
 /*jshint esversion: 6 */
 
 function redirectUser(){
-	confirm("You are not logged in. Please not that you will be redirected to login page when you close the dialog.")
-	redirect : window.location.replace('index.html')
+	confirm("You are not logged in. Please not that you will be redirected to login page when you close the dialog.");
+	redirect : window.location.replace('index.html');
 }
 
 
 
 function logout(){
 	if(window.localStorage.getItem('token') ===""){
-		redirectUser()
+		redirectUser();
 	}
 	else{
 		
-		fetch('http://localhost:5000/api/v1/auth/logout',{		
+		fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/logout',{		
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -23,24 +23,24 @@ function logout(){
 		})
 		.then((result) => result.json())
 		.then((data) => {
-			confirm(data.message)
+			confirm(data.message);
 			
 			window.localStorage.removeItem('token');
-			redirect: window.location.replace('index.html');
+			redirect: window.location.replace('./index.html');
 		})
-		.catch(error => alert(error))
+		.catch(error => alert(error));
 	}
 }
 
 function my_entrys(){
-	var token = window.localStorage.getItem('token')
+	var token = window.localStorage.getItem('token');
 	if(token ==="" || token == null){
-		redirectUser()
+		redirectUser();
 	}
 	else{
 		var statusCode;
 		
-		fetch('http://localhost:5000/api/v1/entries',{		
+		fetch('https://diary-api-v2.herokuapp.com/api/v1/entries',{		
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -49,20 +49,20 @@ function my_entrys(){
 
 		})
 		.then((result) => {
-			console.log(result)
-			statusCode = result.status
+			console.log(result);
+			statusCode = result.status;
 			if (result.status == 200){
-				return result.json()
+				return result.json();
 			}		
 			else if (result.status == 401){
-				redirectUser()
+				redirectUser();
 			}
 			})
 		.then((data) =>{
-			console.log(data)
+			console.log(data);
 			if (statusCode == 404){
 				document.getElementById('displayInfo').innerHTML =
-				 "You don't have any active entry offer now."
+				 "You don't have any active entry offer now.";
 
 			}else{
 				let output = ``;
@@ -102,14 +102,14 @@ function my_entrys(){
 				document.getElementById('entries').innerHTML = output;
 			}
 		})
-		.catch(error => alert(error))
+		.catch(error => alert(error));
 	}	
 }
 
 
 function edit_entry(entry_id){
 	// open modal to edit diary entry
-	var modal = document.getElementById('edit_modal')
+	var modal = document.getElementById('edit_modal');
 	
 	modal.style.display = "block";
 	
@@ -117,17 +117,17 @@ function edit_entry(entry_id){
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
-	}
+	};
 	document.getElementById('edit_modal').addEventListener('submit', updateDetail);
 
 	function updateDetail(e){
-		e.preventDefault()
+		e.preventDefault();
 		let title = document.getElementById('title').value;
 		let body = document.getElementById('body').value;
 		
 		var statusCode;
 
-		fetch('http://localhost:5000/api/v1/entries/'+parseInt(entry_id),{
+		fetch('https://diary-api-v2.herokuapp.com/api/v1/entries/'+parseInt(entry_id),{
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -141,16 +141,16 @@ function edit_entry(entry_id){
 		})
 		.then((result) => {
 		
-			statusCode = result.status
-			return result.json()
+			statusCode = result.status;
+			return result.json();
 		})
 		.then((data) =>{
 			
-			window.alert(data.message)
+			window.alert(data.message);
 			modal.style.display = "none";
-			redirect: window.location.replace('./viewAllEntries.html')
+			redirect: window.location.replace('./viewAllEntries.html');
 			
-		})
+		});
 		
 	}
 	
@@ -159,7 +159,7 @@ function edit_entry(entry_id){
 function delete_entry(entry_id){
 	
 		var statusCode;
-		fetch('http://localhost:5000/api/v1/entries/'+parseInt(entry_id),{
+		fetch('https://diary-api-v2.herokuapp.com/api/v1/entries/'+parseInt(entry_id),{
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
@@ -167,16 +167,16 @@ function delete_entry(entry_id){
 			}
 		})
 		.then((result) => {
-			console.log(result)
-			statusCode = result.status
-			return result.json()
+			console.log(result);
+			statusCode = result.status;
+			return result.json();
 		})
 		.then((data) =>{
-			console.log(data)
-			window.alert("entry has been deleted.")
-			window.location.reload()
+			console.log(data);
+			window.alert("entry has been deleted.");
+			window.location.reload();
 		})
-		.catch(error => alert(error))
+		.catch(error => alert(error));
 	}
 
 
@@ -185,7 +185,7 @@ function view_entry(entry_id){
 
 
 	var statusCode;
-	fetch('http://localhost:5000/api/v1/entries/'+parseInt(entry_id),{
+	fetch('https://diary-api-v2.herokuapp.com/api/v1/entries/'+parseInt(entry_id),{
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json',
@@ -193,19 +193,19 @@ function view_entry(entry_id){
 		}
 	})
 	.then((result) => {
-		console.log(result)
-		statusCode = result.status
-		return result.json()
+		console.log(result);
+		statusCode = result.status;
+		return result.json();
 	})
 	.then((data) =>{
-		console.log(data)
+		console.log(data);
 		let detail_output =``;
 		detail_output += `<form action ="" class="add-content" id="detail_modal" >
-
+						<span class="close">&times;</span>
 						<table>
+						
 							<tr>
 								
-								<span class="close">&times;</span>
 								
 								
 								<h2>${data.title}  <i class="fa fa-book" aria-hidden="true"></i></h2> 
@@ -243,10 +243,10 @@ function view_entry(entry_id){
 	
 
 						
-					</form>`
+					</form>`;
 					document.getElementById('details').innerHTML = detail_output;
 
-					var modal = document.getElementById('detail_modal')
+					var modal = document.getElementById('detail_modal');
 	
 					// sow modal box
 					modal.style.display = "block";
@@ -256,16 +256,16 @@ function view_entry(entry_id){
 					// When the user clicks on <span> (x), close the modal
 					span.onclick = function() {
 						modal.style.display = "none";
-					}
+					};
 	
 					window.onclick = function(event) {
 						if (event.target == modal) {
 							modal.style.display = "none";
 						}
-					}
+					};
 			
 		
 	})
-	.catch(error => alert(error))
+	.catch(error => alert(error));
 	
 }

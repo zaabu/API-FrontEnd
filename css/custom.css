@@ -448,12 +448,15 @@ a {
 .close {
     color: #fff;
 	background:#990000;
-    float: right;
-    clear: both;
+    /* float: right;
+    clear: both; */
     font-size: 19px;
 	font-weight: bold;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-top: 0px;
+	margin-left: 0px;
+	
 }
 
 .close:hover,.close:focus {
