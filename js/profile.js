@@ -1,8 +1,10 @@
 /*jshint esversion: 6 */
 
 function myProfile(){
-	if(window.localStorage.getItem('token') ===""){
-		redirect : window.location.replace('index.html');
+	var token = window.localStorage.getItem('token');
+    
+	if(token ==="" || token == null){
+		redirectUser();
 	}
 	else{
 		var statusCode;

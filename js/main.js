@@ -8,12 +8,13 @@ function redirectUser(){
 
 
 function logout(){
-	if(window.localStorage.getItem('token') ===""){
+	var token = window.localStorage.getItem('token');
+    
+	if(token ==="" || token == null){
 		redirectUser();
 	}
-	else{
-		
-		fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/logout',{		
+	
+	fetch('https://diary-api-v2.herokuapp.com/api/v1/auth/logout',{		
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -25,11 +26,11 @@ function logout(){
 		.then((data) => {
 			confirm(data.message);
 			
+			
 			window.localStorage.removeItem('token');
 			redirect: window.location.replace('./index.html');
 		})
 		.catch(error => alert(error));
-	}
 }
 
 function my_entrys(){

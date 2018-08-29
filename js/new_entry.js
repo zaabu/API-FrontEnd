@@ -9,11 +9,10 @@ function newEntry(e){
 
     var statusCode;
 
-    if(window.localStorage.getItem('token') ===""){
-        result = confirm("You need to log in first.\nPress Ok to go to login");
-        if(result){
-            redirect : window.location.replace('index.html');
-        }
+    var token = window.localStorage.getItem('token');
+    
+	if(token ==="" || token == null){
+		redirectUser();
 	}
 	else{
 		
