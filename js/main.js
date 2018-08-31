@@ -109,7 +109,29 @@ function my_entrys(){
 
 
 function edit_entry(entry_id){
-	// open modal to edit diary entry
+
+	var statusCode;
+	fetch('https://diary-api-v2.herokuapp.com/api/v1/entries/'+parseInt(entry_id),{
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+		}
+	})
+	.then((result) => {
+		
+		return result.json()
+	})
+	.then((data) =>{
+		document.getElementById('title').innerHTML = data.title;
+		document.getElementById('body').innerHTML = data.body;
+
+	})
+	.catch(error => alert(error));
+	
+
+        
+		
 	var modal = document.getElementById('edit_modal');
 	
 	modal.style.display = "block";
@@ -151,11 +173,13 @@ function edit_entry(entry_id){
 			modal.style.display = "none";
 			redirect: window.location.replace('./viewAllEntries.html');
 			
-		});
+        })
+        .catch(error => alert(error));
 		
 	}
 	
 }
+
 
 function delete_entry(entry_id){
 	
