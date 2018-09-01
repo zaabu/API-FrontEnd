@@ -136,6 +136,8 @@ function edit_entry(entry_id){
 	
 	modal.style.display = "block";
 	
+	var span = document.getElementsByClassName("close")[0];
+
 	span.onclick = function() {
 		modal.style.display = "none";
 	};
