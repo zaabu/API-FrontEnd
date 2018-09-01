@@ -309,6 +309,9 @@ nav li {
 	padding-top: 5px;
 	color:white;
 }
+#body {
+	height:100px;
+}
 
 .welcome2 {
 	margin-top: 50px;
